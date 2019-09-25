@@ -220,3 +220,32 @@ function transformation(string $str, array $arr): string {
 $str = 'привет! hello!';
 echo transformation($str, $array);
 echo '<hr>';
+
+
+//Задание10
+$table = "<table>";
+for ($i = 0; $i < 10; $i++) {
+    $table .= "<tr>";
+    for ($j = 0; $j < 10; $j++) {
+        if ($i === 0 && $j === 0) {
+            $tmp = 0;
+            $table .= "<td style='border: 1px solid black; width: 30px; height: 30px; text-align: center'>0</td>";
+            continue;
+        } else if ($i === 0 && $j !== 0) {
+            $tmp = ($i + 1) * $j;
+            $table .= "<td style='border: 1px solid black; width: 30px; height: 30px; text-align: center'>$tmp</td>";
+            continue;
+        } else if ($i !== 0 && $j === 0) {
+            $tmp = $i * ($j + 1);
+            $table .= "<td style='border: 1px solid black; width: 30px; height: 30px; text-align: center'>$tmp</td>";
+            continue;
+        } else {
+            $tmp = $i * $j;
+            $table .= "<td style='border: 1px solid black; width: 30px; height: 30px; text-align: center'>$tmp</td>";
+            continue;
+        }
+    }
+    $table .= "</tr>";
+}
+
+echo $table;
